@@ -37,7 +37,9 @@ const FormPage = () => {
       case QuestionType.MCQuestion:
         return <MCQPage {...question} />;
       case QuestionType.TextInputQuestion:
-        return <TextQuestionPage {...question} />;
+        return (
+          <TextQuestionPage question={question} formPage={currentFormPage} />
+        );
 
       default:
         return null;

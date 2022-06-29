@@ -6,7 +6,7 @@ import {
   QuestionType,
 } from "features/questions";
 import { useAppDispatch, useAppSelector } from "hooks";
-import produce from "immer";
+import { produce } from "immer";
 import { useCallback, useEffect, useState } from "react";
 import {
   applyEdgeChanges,

@@ -14,7 +14,9 @@ module.exports = (_env, { mode }) => {
       path: path.resolve(__dirname, "build"),
       filename: "[name].[chunkhash].js",
       chunkFilename: "[name].[chunkhash].js",
-      publicPath: "/",
+      publicPath: devMode
+        ? "/"
+        : "https://shobhanbiswas11.github.io/survey-form-monorepo/",
     },
 
     devServer: {

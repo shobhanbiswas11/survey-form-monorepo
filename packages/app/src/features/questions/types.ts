@@ -13,10 +13,17 @@ interface CommonAttrs {
   };
 }
 
+export interface Suggestion {
+  id: string;
+  content: string;
+}
+
 export interface MCQuestionChoice {
   id: string;
   content: string;
   child?: string;
+  point?: number;
+  suggestions?: Suggestion[];
 }
 
 export interface MCQuestion extends CommonAttrs {
@@ -30,3 +37,13 @@ export interface TextInputQuestion extends CommonAttrs {
 }
 
 export type Question = TextInputQuestion | MCQuestion;
+
+export function questionIsMCQ(question: CommonAttrs): question is MCQuestion {
+  return question.type === QuestionType.MCQuestion;
+}
+
+export function questionIsTextType(
+  question: CommonAttrs
+): question is TextInputQuestion {
+  return question.type === QuestionType.TextInputQuestion;
+}

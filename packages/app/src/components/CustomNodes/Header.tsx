@@ -1,9 +1,10 @@
 import { HomeIcon as HomeOutline } from "@heroicons/react/outline";
 import { HomeIcon as HomeSolid } from "@heroicons/react/solid";
+import { QuestionDetailsLink } from "components/Links";
 import { formActions, formSelectors } from "features/form";
 import { Question } from "features/questions";
 import { useAppDispatch, useAppSelector } from "hooks";
-import React, { FC } from "react";
+import { FC } from "react";
 import { NodeSemanticName } from "./NodeSemanticNames";
 
 const NodeHeader: FC<Question> = ({ id, children, type }) => {
@@ -32,6 +33,13 @@ const NodeHeader: FC<Question> = ({ id, children, type }) => {
         )}
 
         {children}
+
+        <QuestionDetailsLink
+          id={id}
+          className="ml-auto p-1 px-2 bg-slate-900 text-white rounded-md cursor-pointer"
+        >
+          Details
+        </QuestionDetailsLink>
       </div>
     </div>
   );

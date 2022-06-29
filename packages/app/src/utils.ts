@@ -1,4 +1,5 @@
 export { default as clx } from "classnames";
+export { generate as generateId } from "shortid";
 
 export function removeFalsy<T>(arr: (undefined | T)[]) {
   return arr.filter(Boolean) as T[];

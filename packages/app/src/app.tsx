@@ -1,4 +1,6 @@
+import { QuestionDetailsPath } from "components";
 import Flow from "components/Flow";
+import QuestionDetails from "features/details";
 import { FormPage } from "features/FormPage";
 import { useAppDispatch } from "hooks";
 import React, { useEffect } from "react";
@@ -24,6 +26,7 @@ const App: React.FC = () => {
         }
       />
       <Route path="/form" element={<FormPage />} />
+      <Route path={QuestionDetailsPath} element={<QuestionDetails />} />
     </Routes>
   );
 };
