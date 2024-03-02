@@ -3,6 +3,7 @@ import {
   DocumentTextIcon,
   PlusCircleIcon,
 } from "@heroicons/react/outline";
+import { formSelectors } from "features/form";
 import { questionSelector } from "features/questions";
 import { useAppSelector } from "hooks";
 import { FC } from "react";
@@ -20,9 +21,18 @@ const IconBtn: FC = ({ children }) => {
 
 const FlowTray = () => {
   const questions = useAppSelector(questionSelector.selectAll);
+  const formHead = useAppSelector(formSelectors.head);
 
   function handleDownload() {
-    downloadAsJson(questions, "questions");
+    downloadAsJson(
+      {
+        questions,
+        form: {
+          head: formHead,
+        },
+      },
+      "questions"
+    );
   }
 
   return (

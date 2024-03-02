@@ -12,7 +12,6 @@ const TextQuestionPage = ({
   formPage: TextQuestionFormPage;
 }) => {
   const dispatch = useAppDispatch();
-  console.log(inputValue);
 
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     dispatch(

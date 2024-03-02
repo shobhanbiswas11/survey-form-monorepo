@@ -29,17 +29,6 @@ const MCQPage = (question: MCQuestion) => {
   return (
     <div>
       <h1 className="text-4xl font-bold mb-10">{question.content}</h1>
-      {/* <div className="flex justify-center">
-        {question.choices.map((choice, i) => (
-          <div
-            key={i}
-            className="h-20 mr-4 last:mr-0 w-60 border-2 border-gray-500 flex justify-center items-center"
-          >
-            {choice.content}
-          </div>
-        ))}
-      </div> */}
-
       <div className="w-full max-w-md mx-auto">
         <RadioGroup value={selected} onChange={handelSelected}>
           <RadioGroup.Label className="sr-only">Server size</RadioGroup.Label>

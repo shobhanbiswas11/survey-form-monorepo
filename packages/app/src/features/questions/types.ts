@@ -7,6 +7,8 @@ interface CommonAttrs {
   id: string;
   type: QuestionType;
   content: string;
+  point?: number;
+  overview?: string;
   flowData?: {
     x: number;
     y: number;
@@ -29,6 +31,7 @@ export interface MCQuestionChoice {
 export interface MCQuestion extends CommonAttrs {
   type: QuestionType.MCQuestion;
   choices: MCQuestionChoice[];
+  multipleCorrect?: boolean;
 }
 
 export interface TextInputQuestion extends CommonAttrs {
